@@ -1,1 +1,1 @@
-module.exports = require('bindings')('sandboxpi');
+module.exports = require('bindings')('node-sandboxpi');
