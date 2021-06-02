@@ -44,7 +44,7 @@ setInterval(function() {
     console.log(sensor.getTemperatureF());
 }, 3000);
 ```
-Example with sensor HC-SC04 (5v)
+Example with sensor HC-SC04/SRO4M-2 (5v)
 
 ```javascript
 const { HC_SC04 } = require('node-sandboxpi');
