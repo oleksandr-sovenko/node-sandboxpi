@@ -38,8 +38,8 @@ var w1_dev = W1.getDevices(),
     sensor = W1.DS18B20(w1_dev[0].addr);
  
 setInterval(function() {
-    CONSOLE.log(sensor.getTemperatureC());
-    CONSOLE.log(sensor.getTemperatureF());
+    console.log(sensor.getTemperatureC());
+    console.log(sensor.getTemperatureF());
 }, 3000);
 ```
 Example with sensor HC-SC04 (5v)
@@ -47,8 +47,8 @@ Example with sensor HC-SC04 (5v)
 ```javascript
 const { HC_SC04 } = require('node-sandboxpi');
 
-var hc_sc04 = HC_SC04(15, 16); // wPi колонка
+var hc_sc04 = HC_SC04(15, 16);
 setInterval(function() {
-    CONSOLE.log(hc_sc04.getDistanceCM());
+    console.log(hc_sc04.getDistanceCM());
 }, 1000);
 ```
