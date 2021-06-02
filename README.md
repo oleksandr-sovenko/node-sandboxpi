@@ -32,6 +32,8 @@ setInterval(function() {
 Example with sensor DS18B20 (5v)
 
 ```javascript
+// DATA - PIN26
+
 const { W1 } = require('node-sandboxpi');
 
 var w1_dev = W1.getDevices(),
@@ -55,8 +57,6 @@ setInterval(function() {
 Example with sensor BMP280 (3.3v)
 
 ```javascript
-// DATA - PIN26
-
 const { BMP280 } = require('node-sandboxpi'),
 
 var bmp280 = BMP280();
