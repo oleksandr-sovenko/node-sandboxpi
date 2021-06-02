@@ -55,7 +55,8 @@ setInterval(function() {
 Example with sensor BMP280 (3.3v)
 
 ```javascript
-// Data - pin26 
+// DATA - PIN26
+
 const { BMP280 } = require('node-sandboxpi'),
 
 var bmp280 = BMP280();
