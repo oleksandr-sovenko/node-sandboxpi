@@ -13,7 +13,7 @@ npm link node-sandboxpi # (optional) for each project where will be used 'node-s
 
 ## Examples
 
-Example with led indicator
+Example with led indicator (3.3v)
 
 ```javascript
 const { GPIO } = require('node-sandboxpi');
@@ -50,5 +50,16 @@ const { HC_SC04 } = require('node-sandboxpi');
 var hc_sc04 = HC_SC04(15, 16);
 setInterval(function() {
     console.log(hc_sc04.getDistanceCM());
+}, 1000);
+```
+Example with sensor BMP280 (3.3v)
+
+```javascript
+{ BMP280 } = require('node-sandboxpi'),
+
+var bmp280 = BMP280();
+
+setInterval(function() {
+    console.log(bmp280.getData());
 }, 1000);
 ```
