@@ -7,7 +7,7 @@ npm install https://github.com/oleksandr-sovenko/node-sandboxpi
 ```
 or
 ```bash
-npm i https://github.com/oleksandr-sovenko/node-sandboxpi -g --unsafe
+npm install https://github.com/oleksandr-sovenko/node-sandboxpi -g --unsafe
 npm link node-sandboxpi # (optional) for each project where will be used 'node-sandboxpi'
 ```
 
