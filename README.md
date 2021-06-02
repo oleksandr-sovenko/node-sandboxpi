@@ -55,7 +55,7 @@ setInterval(function() {
 Example with sensor BMP280 (3.3v)
 
 ```javascript
-{ BMP280 } = require('node-sandboxpi'),
+const { BMP280 } = require('node-sandboxpi'),
 
 var bmp280 = BMP280();
 
