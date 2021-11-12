@@ -65,3 +65,11 @@ setInterval(function() {
     console.log(bmp280.getData());
 }, 1000);
 ```
+
+## GPIO Buttons (pins)
+
+1, 5, 8, 12, 14, 13
+
+## GPIO Leds (pins, start off)
+
+4, 5, 8, 11, 12, 13, 14
