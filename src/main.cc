@@ -43,6 +43,22 @@ void signalHandler(int signum) {
 
 
 // GPIO {
+        Napi::Value GPIO_Pud(const Napi::CallbackInfo& info) {
+                Napi::Env env = info.Env();
+
+                if (!info[0].IsNumber() || !info[1].IsNumber()) {
+                        Napi::TypeError::New(env, "Wrong arguments").ThrowAsJavaScriptException();
+                        return env.Null();
+                }
+
+                int pin  = info[0].As<Napi::Number>();
+                int mode = info[1].As<Napi::Number>();
+
+                pullUpDnControl(pin, mode);
+
+                return env.Null();
+        }
+
 	Napi::Value GPIO_Read(const Napi::CallbackInfo& info) {
 		Napi::Env env = info.Env();
 
@@ -200,18 +216,30 @@ Napi::Object Module(Napi::Env env, Napi::Object exports) {
 
 	GPIO.Set(Napi::String::New(env, "mode"),
 		Napi::Function::New(env, GPIO_Mode));
+
 	GPIO.Set(Napi::String::New(env, "write"),
 		Napi::Function::New(env, GPIO_Write));
 	GPIO.Set(Napi::String::New(env, "read"),
 		Napi::Function::New(env, GPIO_Read));
+
+        GPIO.Set(Napi::String::New(env, "pud"),
+                Napi::Function::New(env, GPIO_Pud));
+
 	GPIO.Set(Napi::String::New(env, "OUTPUT"),
 		Napi::Number::New(env, OUTPUT));
 	GPIO.Set(Napi::String::New(env, "INPUT"),
 		Napi::Number::New(env, INPUT));
+
 	GPIO.Set(Napi::String::New(env, "LOW"),
 		Napi::Number::New(env, LOW));
 	GPIO.Set(Napi::String::New(env, "HIGH"),
 		Napi::Number::New(env, HIGH));
+
+        GPIO.Set(Napi::String::New(env, "PUD_DOWN"),
+                Napi::Number::New(env, PUD_DOWN));
+        GPIO.Set(Napi::String::New(env, "PUD_UP"),
+                Napi::Number::New(env, PUD_UP));
+
 	exports.Set(Napi::String::New(env, "GPIO"), GPIO);
 
 	exports.Set(Napi::String::New(env, "BMP280"),
@@ -234,4 +262,3 @@ Napi::Object Module(Napi::Env env, Napi::Object exports) {
 
 
 NODE_API_MODULE(Module , Module)
-
