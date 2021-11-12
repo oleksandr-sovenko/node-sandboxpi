@@ -235,9 +235,11 @@ Napi::Object Module(Napi::Env env, Napi::Object exports) {
 	GPIO.Set(Napi::String::New(env, "HIGH"),
 		Napi::Number::New(env, HIGH));
 
-        GPIO.Set(Napi::String::New(env, "PUD_DOWN"),
+	GPIO.Set(Napi::String::New(env, "OFF"),
+                Napi::Number::New(env, PUD_OFF));
+        GPIO.Set(Napi::String::New(env, "DOWN"),
                 Napi::Number::New(env, PUD_DOWN));
-        GPIO.Set(Napi::String::New(env, "PUD_UP"),
+        GPIO.Set(Napi::String::New(env, "UP"),
                 Napi::Number::New(env, PUD_UP));
 
 	exports.Set(Napi::String::New(env, "GPIO"), GPIO);
