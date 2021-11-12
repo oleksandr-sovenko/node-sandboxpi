@@ -68,7 +68,7 @@ setInterval(function() {
 
 ## GPIO Buttons (pins)
 
-1, 5, 8, 12, 14, 13
+0, 1, 5, 8, 12, 14, 13
 
 ## GPIO Leds (pins, start off)
 
